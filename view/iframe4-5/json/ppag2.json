@@ -1,0 +1,29 @@
+{ "pager":{
+  "pageCount":12,
+  "pageNum":2
+  },
+ "branches":{
+  "brfirst":11,
+  "brlast":13,
+  "brcount":2
+  },
+  "content":[
+    {
+      "number":"23483",
+      "name":"智融金",
+      "date":"2018-4-01",
+      "menony":"324",
+      "stat":"通过",
+      "curtstat":"已启用"
+    },
+    {
+      "number":"23486",
+      "name":"恒泰金服",
+      "date":"2018-4-12",
+      "menony":"1324",
+      "stat":"通过",
+      "curtstat":"已启用"
+    }
+  ]
+
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>后台管理系统</title>
+    <link rel="stylesheet" href="../../lib/normalize.css">
+    <link rel="stylesheet" href="../../lib/base.css">
+    <link rel="stylesheet" href="css/iframe.css">
+    <link rel="stylesheet" href="css/iframe1.css">
+    <script src="../../lib/shim/es5-shim.js"></script>
+    <script src="../../lib/shim/es5-sham.js"></script>
+    <script src="../../lib/jquery-1.11.1.min.js"></script>
+    <script src="../../lib/template-web.js"></script>
+    <script src="js/iframe.js"></script>
+
+    <script id="sc-Data" type="text/html">
+        {{each $data}}
+        <a title={{$value.name}} class="ifram-data-list">
+            <div class="ifram-data-img-box">
+                <span class="ifram-data-img"></span>
+            </div>
+            <div class="ifram-data-font">
+                <span class="js-scyh-num">{{$value.num}}</span>
+                <span>{{$value.name}}</span>
+            </div>
+        </a>
+        {{/each}}
+    </script>
+    <script id="newsTable" type="text/html">
+        {{each $data a b}}
+        <table class="content-news-table fl">
+            <tr>
+                <th colspan="2" class="content-news-tr">
+                    {{a.title}}
+                </th>
+            </tr>
+            {{each a.children order}}
+            <tr>
+                <td class="news-table-list">{{order.name}}</td>
+                <td>
+                    <span class="news-num">{{order.num}}</span>个
+                </td>
+            </tr>
+            {{/each}}
+        </table>
+        {{/each}}
+    </script>
+    <script id="newsTable3" type="text/html">
+        <table  class="content-news-table m0 fl">
+            <tr>
+                <th class="content-news-tr">
+                    最新消息
+                </th>
+            </tr>
+            {{each $data}}
+            <tr>
+                <td class="news-table-list news "><a>{{$value}}</a></td>
+            </tr>
+            {{/each}}
+        </table>
+    </script>
+
+    <script>
+        $(function(){
+            head.init();
+        });
+    </script>
+
+</head>
+<body>
+    <div class="head">
+        <span>首页》</span>
+        <span class="js-head-menu"></span>
+    </div>
+    <div class="ifram-content">
+        <div class="ifram-content-title">
+            欢迎使用后台管理系统
+        </div>
+        <div class="ifram-content-data js-ifram-content-data">
+
+        </div>
+        <div class="ifram-content-news clearfix">
+            <div class="js-ifram-content-news ifram-content-news2">
+
+            </div>
+            <div class="js-ifram-content-news2 ifram-content-news2">
+
+            </div>
+        </div>
+        <div class="ifram-content-foot">
+            <a href="../iframe2/iframe2.html" class="iframt-foot-list">
+                <img src="image/icon-addp.png" class="foot-list-span">
+                <p>添加商品</p>
+            </a>
+            <a href="../iframe2/iframe2.html" class="iframt-foot-list">
+                <img src="image/icon-cpgl.png" class="foot-list-span">
+                <p>产品分类</p>
+            </a>
+            <a href="../iframe8-2/iframe8-2.html" class="iframt-foot-list">
+                <img src="image/icon-grxx.png" class="foot-list-span">
+                <p>个人信息</p>
+            </a>
+            <a href="../iframe7-1/iframe7-1.html" class="iframt-foot-list">
+                <img src="image/xtsz.png" class="foot-list-span">
+                <p>系统设置</p>
+            </a>
+            <a href="../iframe3/iframe3.html" class="iframt-foot-list">
+                <img src="image/icon-gwcc.png" class="foot-list-span">
+                <p>商品订单</p>
+            </a>
+            <a href="#" class="iframt-foot-list">
+                <img src="image/icon-ad.png" class="foot-list-span">
+                <p>添加广告</p>
+            </a>
+            <a href="#" class="iframt-foot-list">
+                <img src="image/icon-addp.png" class="foot-list-span">
+                <p>添加文章</p>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

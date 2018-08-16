@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>后台管理系统</title>
+    <link rel="stylesheet" href="../../lib/normalize.css">
+    <link rel="stylesheet" href="../../lib/layui/css/layui.css">
+    <script src="../../lib/shim/es5-shim.js"></script>
+    <script src="../../lib/shim/es5-sham.js"></script>
+    <script src="../../lib/layui/layui.js"></script>
+    <script src="../../lib/jquery-1.11.1.min.js"></script>
+    <script src="../../lib/template-web.js"></script>
+    <link rel="stylesheet" href="../../lib/base.css">
+    <link rel="stylesheet" href="../iframe1/css/iframe.css">
+    <link rel="stylesheet" href="../iframe2/css/iframe2.css">
+    <link rel="stylesheet" href="css/iframe4-6.css">
+    <script src="../iframe2/js/iframe2.js"></script>
+    <script src="js/iframe4-6.js"></script>
+    <script>
+        $(function () {
+            nav.into();
+        });
+    </script>
+    <script id="addcarPop" type="text/html">
+        <div class="add-pay-box js-add-pay-box">
+            <div class="add-pay-cont js-add-pay-cont">
+                <div class="add-pay-til js-add-pay-til">
+                    <span>添加支付方式</span>
+                    <div class="add-pay-til-r">
+                        <s class="js-clck"></s>
+                    </div>
+                </div>
+                <form action="#" id="pay-way" class="add-pay-litbox js-add-pay-litbox">
+                    <div class="add-pay-img js-add-pay-img">
+                        <input type="checkbox" name="zxzf" id="zx" class="js-zf zf-way">
+                        <label for="zx"></label>
+                        <img src="image/yinglian.jpg">
+                    </div>
+                    <div class="add-pay-img">
+                        <input type="checkbox" name="yz" id="yz" class="js-zf zf-way">
+                        <label for="yz"></label>
+                        <img src="image/yozhif.jpg">
+                    </div>
+                    <div class="add-pay-img">
+                        <input type="checkbox" name="wxzf" id="zf" class="js-zf zf-way">
+                        <label for="zf"></label>
+                        <img src="image/zhifb.jpg">
+                    </div>
+                    <div class="add-pay-img">
+                        <input type="checkbox" name="wx" id="wx" class="js-zf zf-way">
+                        <label for="wx"></label>
+                        <img src="image/weixin.jpg">
+                    </div>
+                </form>
+                <form action="#" id="pay-way-k" class="pay-way-k js-pay-way-k">
+
+                </form>
+                <div class="add-pay-foot js-add-pay-foot">
+                    <div class="js-yesPop">确定</div>
+                    <div class="js-clck">取消</div>
+                </div>
+            </div>
+        </div>
+    </script>
+    <script id="addcarPop2" type="text/html">
+
+    </script>
+    <script id="PopMaterial" type="text/html">
+        <table class="add-pay-table">
+            <tr>
+                <td>支付方式名称</td>
+                <td>
+                    <input type="text" name="zfmc">
+                </td>
+            </tr>
+            <tr>
+                <td>支持交易货币</td>
+                <td>
+                    <input type="text" class="rmb" placeholder="人民币" disabled name="zfjyhb">
+                </td>
+            </tr>
+            <tr>
+                <td>合作者身份</td>
+                <td>
+                    <input type="text" name="hzzsf">
+                </td>
+            </tr>
+            <tr>
+                <td>交易安全校验码</td>
+                <td>
+                    <input type="text" name="jyaqyzm">
+                </td>
+            </tr>
+            <tr>
+                <td>选择接口类型</td>
+                <td>
+                    <select>
+                        <option value="volvo">——选择接口类型——</option>
+                        <option value="saab">使用标准双接口</option>
+                        <option value="opel">使用担保交易接口</option>
+                        <option value="audi">使用即时到账交易接口</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>支付费率</td>
+                <td>
+                    <input type="text" class="pay-fl" name="zffl">%
+                </td>
+            </tr>
+            <tr>
+                <td>排序</td>
+                <td>
+                    <input type="text" name="pxsm">
+                </td>
+            </tr>
+            <tr>
+                <td>说明</td>
+                <td>
+                    <textarea name="txt" rows="10" cols="59" wrap="hard" name="sm"></textarea>
+                </td>
+            </tr>
+        </table>
+
+    </script>
+    <script id="Poppay" type="text/html">
+        <div class="payxx">
+            <div class="payxx-box">
+                <div class="payNew">
+                    <table class="payNew-tb">
+                        {{each $data.paye}}
+                            {{if $index%3 == 0}}
+                        <tr>
+                            {{/if}}
+                            <td class="payNew-item">{{$value.key}}</td>
+                            <td>{{$value.value}}</td>
+                            {{if $index%3 == 2}}
+                        </tr>
+                            {{/if}}
+                        {{/each}}
+                        <tr class="item-hight">
+                            <td class="payNew-item item-top">支付介绍</td>
+                            <td colspan="5">中国银联是中国银行卡联合组织，通过银联跨行交易清算系统，实现商业银行系统间的互联互通和资源共享，
+                                保证银行卡跨行、跨地区和跨境的使用。银联网络遍布中国城乡，并已延伸至亚洲、欧洲、美洲、大洋洲、
+                                非洲等境外150个国家和地区(截至2015年1月20日)。
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="payNew">
+                    <img class="cat-img" src="{{$data.url}}"></img>
+                    <p>{{$data.name}}</p>
+                </div>
+            </div>
+            <div class="Support js-Support">
+
+            </div>
+        </div>
+    </script>
+    <script id="blank" type="text/html">
+        <P>支持银行</P>
+        <div class="adRe-card">
+            <div class="adRe-but js-add-card">添加银行</div>
+            <div class="adRe-but js-re-card">删除操作</div>
+        </div>
+        <div class="card-sel js-card-sel">
+            我
+        </div>
+        <div class="add-pay-foot js-add-re re mg10">
+            <div class="js-re">删除</div>
+            <div class="js-allChecked">全选</div>
+        </div>
+    </script>
+
+</head>
+<body>
+<!--head开始-->
+<div class="head">
+    <span>首页》支付方式》银联支付详细</span>
+    <span class="js-head-menu"></span>
+</div>
+<!--iframe2-content开始-->
+<div class="iframe2-content">
+    <div class="js-zffs-box">
+        <div class="iframe2-content-seach iframe2-notice">
+            注：该支付方式启用并不能正常使用，需要开通支付功能才能使用相应的支付方式，
+        </div>
+        <div class="iframe2-content-buttom clearfix">
+            <div class="js-add-pay">添加支付方式</div>
+            <span class="fr">
+                共
+                <s>2324</s>
+                件商品
+            </span>
+        </div>
+        <div class="Payment">
+            <div class="Payment-title">支付方式</div>
+            <div>
+                <div class="Payment-list">
+                    <div class="Payment-list-til">支付宝</div>
+                    <img src="image/zhifb.jpg">
+                    <div class="Payment-list-text">
+                        支付宝（中国）网络技术有限公司是国内领先的第三方支付平台，致力于提供“简单、安全、快速”的支付解决方案
+                    </div>
+                    <div class="Payment-list-check layui-form">
+                        <input type="radio" name="way" value="qi" title="启用">
+                        <input type="radio" name="way" value="gb" title="关闭" checked>
+                    </div>
+                    <div class="Payment-list-but">
+                        <div>删除</div>
+                        <div class="js-xx">详情</div>
+                    </div>
+                </div>
+                <div class="Payment-list">
+                    <div class="Payment-list-til">微信支付</div>
+                    <img src="image/weixin.jpg">
+                    <div class="Payment-list-text">
+                        微信支付是集成在微信客户端的支付功能，用户可以通过手机完成快速的支付流程。
+                    </div>
+                    <div class="Payment-list-check layui-form">
+                        <input type="radio" name="way-2" value="qi" title="启用">
+                        <input type="radio" name="way-2" value="gb" title="关闭" checked>
+                    </div>
+                    <div class="Payment-list-but">
+                        <div>删除</div>
+                        <div>设置</div>
+                    </div>
+                </div>
+                <div class="Payment-list">
+                    <div class="Payment-list-til">银联支付</div>
+                    <img src="image/yinglian.jpg">
+                    <div class="Payment-list-text">
+                        中国银联是中国银行卡联合组织，通过银联跨行交易清算系统，实现商业银行系统间的互联互通和资源共享，
+                        保证银行卡跨行、跨地区和跨境的使用
+                    </div>
+                    <div class="Payment-list-check layui-form">
+                        <input type="radio" name="way-3" value="qi" title="启用">
+                        <input type="radio" name="way-3" value="gb" title="关闭" checked>
+                    </div>
+                    <div class="Payment-list-but">
+                        <div>删除</div>
+                        <div>设置</div>
+                    </div>
+                </div>
+                <div class="Payment-list">
+                    <div class="Payment-list-til">易宝支付</div>
+                    <img src="image/yozhif.jpg">
+                    <div class="Payment-list-text">
+                        中国银联是中国银行卡联合组织，通过银联跨行交易清算系统，
+                        实现商业银行系统间的互联互通和资源共享，保证银行卡跨行、跨地区和跨境的使用
+                    </div>
+                    <div class="Payment-list-check layui-form">
+                        <input type="radio" name="way-4" value="qi" title="启用">
+                        <input type="radio" name="way-4" value="gb" title="关闭" checked>
+                    </div>
+                    <div class="Payment-list-but">
+                        <div>删除</div>
+                        <div>设置</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="add-pay-box2 js-add-pay-box2">
+        <div class="add-pay-cont js-add-pay-cont">
+            <div class="add-pay-til ">
+                <span>添加银行</span>
+                <div class="add-pay-til-r">
+                    <s class='js-clck2'></s>
+                </div>
+            </div>
+            <div class="add-blank-ts">请确保你开通了该银行的付款业务，如果未开通，可能造成用户付款失败。</div>
+            <form action="" method="post" class="add-blank-form">
+                <div class="add-pay-img js-add-pay-img">
+                    <input type="checkbox" name="zxyh" id="zxyh" class="js-selBank">
+                    <label for="zxyh"></label>
+                    <img src="image/black1.png">
+                </div>
+                <div class="add-pay-img js-add-pay-img">
+                    <input type="checkbox" name="zggs" id="zggs" class="js-selBank">
+                    <label for="zggs"></label>
+                    <img src="image/black2.png">
+                </div>
+                <div class="add-pay-img js-add-pay-img">
+                    <input type="checkbox" name="zgmy" id="zgmy" class="js-selBank">
+                    <label for="zgmy"></label>
+                    <img src="image/black3.png">
+                </div>
+                <div class="add-pay-img js-add-pay-img">
+                    <input type="checkbox" name="zgyh" id="zgyh" class="js-selBank">
+                    <label for="zgyh"></label>
+                    <img src="image/black4.png">
+                </div>
+                <div class="add-pay-img js-add-pay-img">
+                    <input type="checkbox" name="zgjs" id="zgjs" class="js-selBank">
+                    <label for="zgjs"></label>
+                    <img src="image/black5.png">
+                </div>
+                <div class="add-pay-img js-add-pay-img">
+                    <input type="checkbox" name="jt" id="jt" class="js-selBank">
+                    <label for="jt"></label>
+                    <img src="image/black6.png">
+                </div>
+                <div class="add-pay-img js-add-pay-img">
+                    <input type="checkbox" name="zgjt" id="szfz" class="js-selBank">
+                    <label for="szfz"></label>
+                    <img src="image/black7.png">
+                </div>
+                <div class="add-pay-img js-add-pay-img">
+                    <input type="checkbox" name="gzfz" id="gzfz" class="js-selBank">
+                    <label for="gzfz"></label>
+                    <img src="image/black8.png">
+                </div>
+                <div class="add-pay-img js-add-pay-img">
+                    <input type="checkbox" name="zgms" id="zgms" class="js-selBank">
+                    <label for="zgms"></label>
+                    <img src="image/black9.png">
+                </div>
+                <div class="add-pay-img js-add-pay-img">
+                    <input type="checkbox" name="zs" id="zs" class="js-selBank">
+                    <label for="zs"></label>
+                    <img src="image/black10.png">
+                </div>
+                <div class="add-pay-img js-add-pay-img">
+                    <input type="checkbox" name="hx" id="hx" class="js-selBank">
+                    <label for="hx"></label>
+                    <img src="image/black11.png">
+                </div>
+                <div class="add-pay-img js-add-pay-img">
+                    <input type="checkbox" name="zggd" id="zggd" class="js-selBank">
+                    <label for="zggd"></label>
+                    <img src="image/black12.png">
+                </div>
+                <div class="add-pay-img js-add-pay-img">
+                    <input type="checkbox" name="bj" id="bj" class="js-selBank">
+                    <label for="bj"></label>
+                    <img src="image/black13.png">
+                </div>
+                <div class="add-pay-img js-add-pay-img">
+                    <input type="checkbox" name="sh" id="sh" class="js-selBank">
+                    <label for="sh"></label>
+                    <img src="image/black14.png">
+                </div>
+                <div class="add-pay-img js-add-pay-img">
+                    <input type="checkbox" name="xmgj" id="xmgj" class="js-selBank">
+                    <label for="xmgj"></label>
+                    <img src="image/black15.png">
+                </div>
+            </form>
+            <div class="add-pay-foot js-add-pay-foot">
+                <div class="js-yesPop2">确定</div>
+                <div class="js-clck2">取消</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

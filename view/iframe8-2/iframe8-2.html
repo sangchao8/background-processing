@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>后台管理系统</title>
+    <link rel="stylesheet" href="../../lib/normalize.css">
+    <link rel="stylesheet" href="../../lib/layui/css/layui.css">
+    <script src="../../lib/shim/es5-shim.js"></script>
+    <script src="../../lib/shim/es5-sham.js"></script>
+    <script src="../../lib/layui/layui.js"></script>
+    <script src="../../lib/jquery-1.11.1.min.js"></script>
+    <script src="../../lib/template-web.js"></script>
+    <link rel="stylesheet" href="../../lib/base.css">
+    <link rel="stylesheet" href="../iframe1/css/iframe.css">
+    <link rel="stylesheet" href="../iframe2/css/iframe2.css">
+    <link rel="stylesheet" href="css/iframe8-2.css">
+    <script id="produtPage" type="text/html">
+        <p class="data-page">
+            <span>每页显示条数：</span>
+            <span>10</span>
+        </p>
+        <p class="data-seach">
+            <span>搜索</span>
+            <input type="text">
+        </p>
+        <table class="iframe2-list-table">
+            <tr class="iframe2-table-title">
+                <td><input class="iframe2-list-input js-allChecked" type="checkbox" name="allselect"></td>
+                <td>ID</td>
+                <td>内容</td>
+                <td>登录地点</td>
+                <td>用户名</td>
+                <td>客服端IP</td>
+                <td>时间</td>
+            </tr>
+            {{each $data.content}}
+            <tr class="js-iframe2-table-row">
+                <td><input class="iframe2-list-input js-itemChecked" type="checkbox" name="allselect"></td>
+                <td>{{$value.number}}</td>
+                <td>
+                    <a href="#">{{$value.text}}</a>
+                </td>
+                <td>{{$value.address}}</td>
+                <td>{{$value.name}}</td>
+                <td>{{$value.ip}}</td>
+                <td>
+                    <span class="table-on js-table-on">{{$value.time}}</span>
+                </td>
+            </tr>
+            {{/each}}
+        </table>
+
+        <p class="currt-branches">
+            第
+            <span>{{$data.branches.brfirst}}</span>
+            到
+            <span>{{$data.branches.brlast}}</span>
+            条记录，共
+            <span>{{$data.branches.brcount}}</span>
+            条
+        </p>
+        <div class="currt-page">
+            <div class="js-pre-page">上一页</div>
+            <div>{{$data.pager.pageNum}}</div>
+            <div class="js-next-page">下一页</div>
+        </div>
+    </script>
+    <script id="confirmBox" type="text/html">
+        <div class="table-balckFixed js-table-balckFixed">
+            <div class="infro-box js-infro-box">
+                <div>
+                    <span>信息</span>
+                    <s class="js-close"></s>
+                </div>
+                <div>{{$data.text}}</div>
+                <div>
+                    <div class="js-yes">确定</div>
+                    <div class="js-no">取消</div>
+                </div>
+            </div>
+        </div>
+    </script>
+    <script id="tipBox" type="text/html">
+        <div class="table-balckFixed js-table-balckFixed">
+            <div class="infro-box">
+                <div class="infro-div">
+                    <img src={{$data.url}}>
+                    {{$data.text}}
+                </div>
+            </div>
+        </div>
+    </script>
+    <script id="pop" type="text/html">
+        <form class="inpmm" id="inpmm" method="post" >
+            <div class="inpmm-lis">
+                <span>原密码：</span>
+                <input type='password' name="ymm" class="inpymm" placeholder="请输入6-16位数字或字母">
+            </div>
+            <div class="inpmm-lis">
+                <span>新密码：</span>
+                <input type='password' name="xmm" class="inpymm" placeholder="请输入6-16位数字或字母">
+            </div>
+            <div class="inpmm-lis">
+                <span>确认密码：</span>
+                <input type='password' name="qrmm" class="inpymm" placeholder="请输入6-16位数字或字母">
+            </div>
+            <div class="inpmm-yes js-inpmm-yes">确认</div>
+        </form>
+    </script>
+    <script src="js/iframe8-2.js"></script>
+    <script>
+        $(function () {
+            nav.into();
+        });
+    </script>
+
+
+</head>
+<body>
+<!--head开始-->
+<div class="head">
+    <span>首页》个人信息</span>
+    <span class="js-head-menu"></span>
+</div>
+<!--iframe2-content开始-->
+<div class="iframe2-content js-iframe2-content">
+    <div class="iframe2-list-l">
+        <div class="Admin-infor-tx">管理员信息</div>
+        <div class="Admin-infor-box">
+            <form action="" id="iframe8form" class="layui-form" method="post">
+                <table class="Admin-infor">
+                    <tr>
+                        <td>用户名：</td>
+                        <td><input type="text" name="adminName" placeholder="张小泉" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>性别：</td>
+                        <td class="sex">
+                            <input type="radio" name="sex" value="nan" title="男" checked >
+                            <input type="radio" name="sex" value="nv" title="女" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>年龄：</td>
+                        <td><input type="text" name="age" placeholder="24" disabled></td>
+                    </tr>
+                    <tr>
+                        <td>移动电话：</td>
+                        <td><input type="text" name="tell" placeholder="13567878908" disabled></td>
+                    </tr>
+                    <tr>
+                        <td>电子邮箱：</td>
+                        <td><input type="text" name="emil" placeholder="567890@qq.com" disabled></td>
+                    </tr>
+                    <tr>
+                        <td>QQ：</td>
+                        <td><input type="text" name="adminName" placeholder="456789787" disabled></td>
+                    </tr>
+                    <tr>
+                        <td>权限：</td>
+                        <td><input type="text" name="qq" placeholder="普通管理员" disabled></td>
+                    </tr>
+                    <tr>
+                        <td>注册时间：</td>
+                        <td><input type="text" name="date" placeholder="2018-1-5" disabled></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <div class="change-pa js-change-pa">修改密码</div>
+        <div class="change-inf js-change-inf">修改信息</div>
+        <div class="save-inf js-save-inf">保存信息</div>
+    </div>
+    <div class="iframe2-list-r js-iframe2-list-r">
+        <div class="Admin-infor-tx">管理员登录记录</div>
+        <div class="Admin-infor-txb">
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

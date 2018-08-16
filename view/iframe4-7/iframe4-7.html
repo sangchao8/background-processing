@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>后台管理系统</title>
+    <link rel="stylesheet" href="../../lib/normalize.css">
+    <link rel="stylesheet" href="../../lib/layui/css/layui.css">
+    <script src="../../lib/shim/es5-shim.js"></script>
+    <script src="../../lib/shim/es5-sham.js"></script>
+    <script src="../../lib/layui/layui.js"></script>
+    <script src="../../lib/jquery-1.11.1.min.js"></script>
+    <script src="../../lib/template-web.js"></script>
+    <link rel="stylesheet" href="../../lib/base.css">
+    <link rel="stylesheet" href="../iframe1/css/iframe.css">
+    <link rel="stylesheet" href="../iframe2/css/iframe2.css">
+    <link rel="stylesheet" href="css/iframe4-7.css">
+    <script>
+        $(function(){
+            nav.into();
+        });
+    </script>
+    <script id="produtPage" type="text/html">
+        <p>
+            <span>每页显示条数：</span>
+            <span>10</span>
+        </p>
+        <table class="iframe2-list-table">
+            <tr class="iframe2-table-title">
+                <td><input class="iframe2-list-input js-allChecked" type="checkbox" name="allselect"></td>
+                <td>ID</td>
+                <td>用户名</td>
+                <td>账户余额</td>
+                <td>最新充值</td>
+                <td>充值时间</td>
+                <td>最新消费</td>
+                <td>消费时间</td>
+                <td>账户状态</td>
+                <td>操作</td>
+            </tr>
+            {{each $data.content}}
+            <tr class="js-iframe2-table-row">
+                <td><input class="iframe2-list-input js-itemChecked" type="checkbox" name="allselect"></td>
+                <td>{{$value.number}}</td>
+                <td>
+                    <a href="#">{{$value.name}}</a>
+                </td>
+                <td>{{$value.menony}}</td>
+                <td>{{$value.menony}}</td>
+                <td>{{$value.date}}</td>
+                <td>{{$value.menony}}</td>
+                <td>{{$value.date}}</td>
+                <td>
+                    <span class="table-on js-table-on">{{$value.curtstat}}</span>
+                </td>
+                <td class="table-set">
+                    <s class="js-set-on"></s>
+                    <s class="js-set-re"></s>
+                    <s class="js-set-mo"></s>
+                </td>
+            </tr>
+            {{/each}}
+        </table>
+
+        <p class="currt-branches">
+            第
+            <span>{{$data.branches.brfirst}}</span>
+            到
+            <span>{{$data.branches.brlast}}</span>
+            条记录，共
+            <span>{{$data.branches.brcount}}</span>
+            条
+        </p>
+        <div class="currt-page">
+            <div class="js-pre-page">上一页</div>
+            <div>{{$data.pager.pageNum}}</div>
+            <div class="js-next-page">下一页</div>
+        </div>
+    </script>
+    <script id="confirmBox" type="text/html">
+        <div class="table-balckFixed js-table-balckFixed">
+            <div class="infro-box js-infro-box">
+                <div>
+                    <span>信息</span>
+                    <s class="js-close"></s>
+                </div>
+                <div>{{$data.text}}</div>
+                <div>
+                    <div class="js-yes">确定</div>
+                    <div class="js-no">取消</div>
+                </div>
+            </div>
+        </div>
+    </script>
+    <script id="tipBox" type="text/html">
+        <div class="table-balckFixed js-table-balckFixed">
+            <div class="infro-box">
+                <div class="infro-div">
+                    <img src={{$data.url}}>
+                    {{$data.text}}
+                </div>
+            </div>
+        </div>
+    </script>
+    <script src="../iframe2/js/iframe2.js"></script>
+    <script src="js/iframe5-1.js"></script>
+
+</head>
+<body>
+    <!--head开始-->
+    <div class="head">
+        <span>首页》账户管理</span>
+        <span class="js-head-menu"></span>
+    </div>
+    <!--iframe2-content开始-->
+    <div class="iframe2-content js-iframe2-content">
+
+        <div class="iframe2-content-seach">
+            <div class="content-seach-list">
+                <span>用户名</span>
+                <input type="text" name="pcName" placeholder="用户名称">
+            </div>
+            <div class="content-seach-input">
+                <input type="button" name="seach" value="查询">
+            </div>
+        </div>
+        <div class="iframe2-content-buttom clearfix">
+            <div>图标展示</div>
+            <span class="fr">
+                共
+                <s>2324</s>
+                件商品
+            </span>
+        </div>
+        <div class="iframe2-content-list">
+            <div class="iframe2-list-r js-iframe2-list-r">
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

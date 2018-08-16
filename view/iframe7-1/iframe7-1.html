@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>后台管理系统</title>
+    <link rel="stylesheet" href="../../lib/normalize.css">
+    <link rel="stylesheet" href="../../lib/base.css">
+    <link rel="stylesheet" href="css/iframe.css">
+    <script src="../../lib/shim/es5-shim.js"></script>
+    <script src="../../lib/shim/es5-sham.js"></script>
+    <script src="../../lib/jquery-1.11.1.min.js"></script>
+    <script src="../../lib/template-web.js"></script>
+    <link rel="stylesheet" href="css/iframe7-1.css">
+    <script src="js/iframe7-1.js"></script>
+
+    <script>
+        $(function(){
+            head.init();
+        });
+    </script>
+
+</head>
+<body>
+    <div class="head">
+        <span>首页》系统设置</span>
+    </div>
+    <div class="ifram-content">
+       <div class="ifram-content-title js-ifram-content-title">
+           <span class="js-changeTab on">基本设置</span>
+           <span class="js-changeTab">消息通知</span>
+           <span class="js-changeTab">底部菜单</span>
+           <span class="js-changeTab">其他设置</span>
+       </div>
+        <div class="ifram-content-box js-ifram-content-box">
+            <div class="ifram-content-item on">
+                <form action="" id="ifram7form" method="post">
+                    <div class="ifram-content-form">
+                        <div class="ifram-form-lis js-focus">
+                            <span>网站名称:</span>
+                            <input type="text" placeholder="请输入汉字和英文字母而且长度不能超过20个字符" name="name" class="js-input-val">
+                        </div>
+                        <div class="ifram-form-lis js-focus">
+                            <span>网站icon图标:</span>
+                            <input type="file" name="icon" class="js-input-val" id="iconFile">
+                            <div class="input-icon js-filename" >请选择文件</div>
+                            <label for="iconFile"></label>
+                        </div>
+                        <div class="ifram-form-lis js-focus">
+                            <span>关键词:</span>
+                            <input type="text" placeholder="5个左右，8个字以内，用英文隔开" name="key" class="js-input-val">
+                        </div>
+                        <div class="ifram-form-lis js-focus">
+                            <span>文件路径配置:</span>
+                            <input type="text" placeholder="默认空为相对路径" name="awy" class="js-input-val">
+                        </div>
+                        <div class="ifram-form-lis js-focus">
+                            <span>描述:</span>
+                            <input type="text" name="ms" class="js-input-val">
+                        </div>
+                        <div class="ifram-form-lis js-focus">
+                            <span>底部版权信息:</span>
+                            <input type="text"  name="bq" class="js-input-val">
+                        </div>
+                        <div class="ifram-form-lis js-focus">
+                            <span>备案号:</span>
+                            <input type="text" name="ba" class="js-input-val">
+                        </div>
+                        <div class="ifram-form-lis js-focus">
+                            <span>统计代码:</span>
+                            <textarea rows="15" cols="69" wrap="hard" name="tjdm" class="js-input-val input-val" ></textarea>
+                            <p class="count js-count"></p>
+                        </div>
+                    </div>
+                    <div class="ifram-content-foot">
+                        <div class="js-save">保存</div>
+                        <div class="js-cancel">取消</div>
+                    </div>
+                </form>
+            </div>
+            <div class="ifram-content-item">
+            </div>
+            <div class="ifram-content-item">
+            </div>
+            <div class="ifram-content-item">
+                <form action="" id="ifram7form2" method="post">
+                    <div class="ifram-content-form">
+                        <div class="ifram-form-lis js-focus">
+                            <span>屏蔽字:</span>
+                            <textarea rows="15" cols="69" wrap="hard" name="tjdm" class="js-input-val input-val" >
+
+                            </textarea>
+                        </div>
+                    </div>
+                    <div class="ifram-content-foot">
+                        <div>保存</div>
+                        <div>取消</div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

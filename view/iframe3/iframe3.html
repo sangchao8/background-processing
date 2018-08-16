@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>后台管理系统</title>
+    <link rel="stylesheet" href="../../lib/normalize.css">
+    <link rel="stylesheet" href="../../lib/layui/css/layui.css">
+    <script src="../../lib/shim/es5-shim.js"></script>
+    <script src="../../lib/shim/es5-sham.js"></script>
+    <script src="../../lib/layui/layui.js"></script>
+    <script src="../../lib/jquery-1.11.1.min.js"></script>
+    <script src="../../lib/template-web.js"></script>
+    <script src="../../lib/echarts.min.js"></script>
+    <link rel="stylesheet" href="../../lib/base.css">
+    <link rel="stylesheet" href="../iframe1/css/iframe.css">
+    <link rel="stylesheet" href="css/iframe3.css">
+    <script src="js/iframe3.js"></script>
+    <script>
+        $(function(){
+            nav.into();
+        });
+    </script>
+    <script id="produtPage" type="text/html">
+        <p>
+            <span>每页显示条数：</span>
+            <span>10</span>
+        </p>
+        <table class="iframe2-list-table">
+            <tr class="iframe2-table-title">
+                <td><input class="iframe2-list-input js-allChecked" type="checkbox" name="allselect"></td>
+                <td>产品编号</td>
+                <td>产品名称</td>
+                <td>投资金额</td>
+                <td>加入时间</td>
+                <td>审核状态</td>
+                <td>状态</td>
+                <td>操作</td>
+            </tr>
+            {{each $data.content}}
+            <tr class="js-iframe2-table-row">
+                <td><input class="iframe2-list-input js-itemChecked" type="checkbox" name="allselect"></td>
+                <td>{{$value.number}}</td>
+                <td>
+                    <a href="#">{{$value.name}}</a>
+                </td>
+                <td>{{$value.menony}}</td>
+                <td>{{$value.date}}</td>
+                <td>{{$value.stat}}</td>
+                <td>
+                    <span class="table-on js-table-on">{{$value.curtstat}}</span>
+                </td>
+                <td class="table-set">
+                    <s class="js-set-on"></s>
+                    <s class="js-set-re"></s>
+                    <s class="js-set-mo"></s>
+                </td>
+            </tr>
+            {{/each}}
+        </table>
+
+        <p class="currt-branches">
+            第
+            <span>{{$data.branches.brfirst}}</span>
+            到
+            <span>{{$data.branches.brlast}}</span>
+            条记录，共
+            <span>{{$data.branches.brcount}}</span>
+            条
+        </p>
+        <div class="currt-page">
+            <div class="js-pre-page">上一页</div>
+            <div>{{$data.pager.pageNum}}</div>
+            <div class="js-next-page">下一页</div>
+        </div>
+    </script>
+    <script id="confirmBox" type="text/html">
+        <div class="table-balckFixed js-table-balckFixed">
+            <div class="infro-box js-infro-box">
+                <div>
+                    <span>信息</span>
+                    <s class="js-close"></s>
+                </div>
+                <div>{{$data.text}}</div>
+                <div>
+                    <div class="js-yes">确定</div>
+                    <div class="js-no">取消</div>
+                </div>
+            </div>
+        </div>
+    </script>
+    <script id="tipBox" type="text/html">
+        <div class="table-balckFixed js-table-balckFixed">
+            <div class="infro-box">
+                <div class="infro-div">
+                    <img src={{$data.url}}>
+                    {{$data.text}}
+                </div>
+            </div>
+        </div>
+    </script>
+
+
+</head>
+<body>
+    <!--head开始-->
+    <div class="head">
+        <span>首页》品牌管理</span>
+        <span class="js-head-menu"></span>
+    </div>
+    <!--iframe2-content开始-->
+    <div class="iframe2-content js-iframe2-content">
+        <form action="" id="iframe2demandForm" method="post">
+            <div class="iframe2-content-seach">
+                <div class="content-seach-list">
+                    <span>产品名称</span>
+                    <input type="text" name="pcName" placeholder="输入产品名称" class="js-seach-input">
+                </div>
+                <div class="content-seach-list">
+                    <span>添加时间</span>
+                    <input type="text" name="adTime" placeholder="选择时间" class="js-seach-input">
+                </div>
+                <div class="content-seach-select">
+                    <select name="PlatformBackground" class="js-seach-input">
+                        <option value ="lx">选择平台类型</option>
+                        <option value ="ss">上市企业</option>
+                        <option value ="gq">国企</option>
+                        <option value="my">民营</option>
+                    </select>
+                </div>
+                <div class="content-seach-input">
+                    <input type="button" name="seach" value="查询" class="js-seachInput">
+                </div>
+            </div>
+            <div class="iframe2-content-buttom clearfix">
+                <div>添加商品</div>
+                <div>批量删除</div>
+                <div>上市公司</div>
+                <div>国企</div>
+                <div>民营</div>
+                <span class="fr">
+                共
+                <s>2324</s>
+                件商品
+            </span>
+            </div>
+            <div class="iframe2-content-list">
+                <div class="iframe2-list-l js-iframe2-list-l" id="iframe2-list-l">
+                </div>
+                <div class="iframe2-list-r js-result-table">
+                </div>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+/*iframe5-1-content开始*/
+.iframe2-list-r{
+    width: 96.5%;
+}
+
+
+/*tip框内容*/
+.infro-box {
+    width: 30%;
+    font-size: 16px;
+    display: inline-block;
+    margin-top: 180px;
+    background-color: white;
+}
+.table-set>s:nth-of-type(1).on {
+    background-color: #c1c1c1;
+}
+.table-on.on:before {
+    content: "已停用";
+    display: inline-block;
+    width: 50px;
+    height: 23px;
+    border-radius: 3px;
+    vertical-align: middle;
+    line-height: 23px;
+    color: white;
+    background-color: #c1c1c1;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.page-ddseach {
+    line-height: 40px;
+}
+.currt-branches{
+    line-height: 35px;
+}

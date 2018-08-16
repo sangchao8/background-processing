@@ -1,0 +1,129 @@
+/*iframe4-4-content开始*/
+
+.iframe2-content-buttom>div:before{
+    width: 0;
+    height: 0;
+}
+
+.iframe2-content-buttom>div:first-child:before{
+    width: 0;
+    height: 0;
+}
+.iframe2-content-buttom>div:first-child+div+div {
+    background-color: rgb(135, 184, 127);
+}
+.iframe2-content-buttom>div:first-child+div+div:hover {
+    box-shadow: inset 1px 1px 20px 20px #00000030;
+}
+.iframe2-list-r{
+    width: 96.5%;
+}
+.iframe2-content-buttom>div:first-child+div:before{
+    width: 0px;
+    height: 0px;
+}
+
+
+.total-money,
+.total-month{
+    display: inline-block;
+}
+.total-month>img{
+   vertical-align:  middle;
+   width: 30px;
+}
+.total-money>p.total-money-firstp{
+    color: #f10215;
+    font-size: 18px;
+    line-height: 60px;
+    text-align: center;
+    padding: 0 20px;
+}
+.total-money>p.total-money-twop{
+    color: #999999;
+    font-size: 14px;
+    line-height: 30px;
+    text-align: center;
+    background-color: #f3f3f3;
+    padding: 0 50px;
+}
+.total-money{border-right: 1px solid #dddddd;}
+
+.iframe2-content-list{
+    top:240px;
+}
+.iframe2-content-seach{
+    font-size: 0;
+    border: 1px solid #dddddd;
+}
+.total-money.day{
+    border-left: none;
+}
+.total-month>p{
+    font-size: 14px;
+    color: white;
+    line-height:  30px;
+}
+.total-month{
+    background-color: rgb(111, 179, 224);
+    padding: 8px 12px;
+    vertical-align: 14px;
+    margin-left: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+.total-month:hover{
+    box-shadow: inset 63px 0px 20px 20px #00000054;
+}
+.fixed{
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+}
+.fixed.on{
+    display: block;
+}
+.month-echarts{
+    width: 90%;
+    height: 90%;
+    background-color: white;
+    margin-left:85px;
+    margin-top:40px;
+}
+
+/*tip框内容*/
+.infro-box {
+    width: 30%;
+    font-size: 16px;
+    display: inline-block;
+    margin-top: 180px;
+    background-color: white;
+}
+.table-set>s:nth-of-type(1).on {
+    background-color: #c1c1c1;
+}
+.table-on.on:before {
+    content: "已停用";
+    display: inline-block;
+    width: 50px;
+    height: 23px;
+    border-radius: 3px;
+    vertical-align: middle;
+    line-height: 23px;
+    color: white;
+    background-color: #c1c1c1;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.page-ddseach {
+    line-height: 40px;
+}
+.currt-branches{
+    line-height: 35px;
+}

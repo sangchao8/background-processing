@@ -1,0 +1,137 @@
+@charset "UTF-8";
+/*----content 开始------*/
+body,html{
+    width: 100%;
+    height: 100%;
+}
+body{
+    background-image: url("../image/shen.jpg");
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size: cover;
+    text-align: center;
+}
+.content{
+    display: inline-block;
+    position:relative;
+    padding: 60px 0 90px 0;
+}
+
+
+/*--title 开始--*/
+.title{
+    text-align: center;
+}
+.title-font{
+    font-size: 40px;
+    color: white;
+    letter-spacing: 0.5em;
+    font-weight:  700;
+}
+
+
+/*--logging 开始--*/
+.logging-box{
+    position: absolute;
+    top: 116px;
+    bottom: 0;
+    width: 100%;
+    /*background-color: red;*/
+}
+.logging{
+    display: inline-block;
+    background-color: rgba(60, 204, 247, 0.5);
+    border-radius: 10px;
+    cursor: default;
+    margin-top: 95px;
+    margin-left: 328px;
+    box-shadow: 3px 4px 15px 4px #00000026;
+}
+.logging>p{
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 50px;
+    border-bottom: 1px solid white;
+}
+.logging-input{
+    padding: 20px 40px;
+}
+.logging-input>input{
+    display: block;
+    width: 203px;
+    line-height: 20px;
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 3px;
+    color: #666666;
+}
+.logging-input>input:nth-of-type(2){
+    margin-bottom: 30px;
+    margin-top: 25px;
+}
+.loggingOn{
+    width: 203px;
+    line-height: 25px;
+    padding: 5px 10px;
+    background-color: rgba(0, 0, 0, 0.4);
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    border-radius: 3px;
+    cursor: pointer;
+    position:  relative;
+    z-index: 10;
+}
+
+.animation>img:nth-of-type(1){
+    position: absolute;
+    bottom: -5px;
+    left: -50px;
+    width: 100%;
+}
+@keyframes bollrotate {
+    from { transform: rotatey(360deg); }
+    50% { transform: rotatey(0deg); }
+    to { transform: rotatey(360deg); }
+    
+}
+.animation>img:nth-of-type(2){
+    position: absolute;
+    bottom: 27px;
+    left: 3px;
+    width: 66%;
+    animation: bollrotate  10s ease infinite forwards;
+}
+@keyframes magnify {
+    from { transform: translatex(-100px); }
+    50% { transform: translatex(0px); }
+    to { transform: translatex(-100px); }
+    
+}
+.animation>img:nth-of-type(3){
+    position: absolute;
+    bottom: 170px;
+    left: 140px;
+    width: 4%;
+    animation: magnify  5s ease infinite forwards;
+}
+@keyframes bollScale {
+    from { transform: scale(1, 1); }
+    50% { transform: scale(0.5, 0.5); }
+    to { transform: scale(1, 1); }
+    
+}
+.animation>img:nth-of-type(4){
+    position: absolute;
+    bottom: 235px;
+    left: 258px;
+    width: 5%;
+    animation: bollScale  5s ease-out infinite backwards;
+}
+
+

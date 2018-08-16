@@ -1,0 +1,455 @@
+/*iframe4-1-content开始*/
+.iframe2-content{
+    position: relative;
+}
+.iframe2-notice{
+    text-align: center;
+    line-height: 50px;
+    background-color: rgb(242, 222, 222);
+}
+.iframe2-content-buttom>div:first-child{
+    background-color: rgb(66, 139, 202);
+}
+.iframe2-content-buttom>div:nth-of-type(1):before {
+    background-image: url(../image/1k.png);
+    width: 14px;
+    height: 14px;
+    top: 3px;
+}
+.Payment-title{
+    font-size: 20px;
+    font-weight: 500;
+    background-color: #cccccc;
+    line-height: 40px;
+    padding-left: 20px;
+    background-image: linear-gradient(#ffffff, #ededed);
+    color: #444444;
+}
+.Payment-list{
+    display: inline-block;
+    text-align:  center;
+    border: 1px solid #dddddd;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.Payment-list>img{
+    width: 267px;
+    height: 125px;
+    border-bottom: 1px solid #dddddd;
+}
+.Payment-list-text{
+    width: 267px;
+    font-size: 14px;
+    color: #9c9c9c;
+    text-align:  left;
+    line-height: 24px;
+    border-bottom: 1px solid #dddddd;
+    padding: 5px 5px;
+    box-sizing:  border-box;
+    height: 100px;
+}
+.Payment-list-til{
+    font-size: 18px;
+    background-color: rgb(111, 179, 224);
+    color: white;
+    line-height: 40px;
+}
+.Payment-list-check>input{
+    margin-right: 10px;
+}
+.Payment-list-check{
+    padding: 6px 10px 10px;
+    border-bottom: 1px solid #dddddd;
+}
+.Payment-list-but>div{
+    display: inline-block;
+    padding: 8px 25px;
+    font-size: 14px;
+    color:  white;
+    border-radius:  3px;
+    cursor: pointer;
+}
+.Payment-list-but>div:first-child{
+    background-color: rgb(209, 91, 71);
+    margin-right: 15px;
+}
+.Payment-list-but>div:first-child+div{
+    background-color: #87b87b;
+}
+.Payment-list-but{
+    padding: 10px 0;
+}
+.Payment-list:nth-of-type(4n+4){
+    margin-right: 0;
+}
+
+
+/*——add-pay-box——*/
+
+html,body {
+    height: 100%;
+}
+.iframe2-content {
+    height: 100%;
+}
+.add-pay-box,
+.add-pay-box2{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.30);
+}
+.add-pay-box2{
+    display: none;
+    z-index: 11;
+    vertical-align: middle;
+}
+.add-pay-box.on{
+    display: none;
+}
+.add-pay-cont{
+    background-color: white;
+    display: inline-block;
+    transform: translateX(-50%);
+    margin-left: 50%;
+    margin-top: 10%;
+    margin-bottom: 20%;
+}
+.add-pay-cont.on{
+    width: 100%;
+    height: 100%;
+}
+.add-pay-til{
+    position: relative;
+    font-size: 14px;
+    line-height: 40px;
+    background-color: #eee;
+    padding: 0 60px 0 20px;
+}
+.add-pay-til.on{
+    width:60px;
+}
+.add-pay-til-r{
+    display: inline-block;
+    position: absolute;
+    right: 10px;
+}
+.add-pay-til-r>s{
+    vertical-align: middle;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #666666;
+    border-radius: 50%;
+    margin-right: 5px;
+    cursor: pointer;
+    background-image: url("../image/close2.png");
+    background-position: center;
+    background-size:contain ;
+}
+.add-pay-til-r>s:hover{
+    background-color: #de4e20;
+}
+.add-pay-img{
+    display: inline-block;
+    position:  relative;
+}
+.add-pay-img:not(last-child){
+   margin-right: 10px;
+}
+#zx + label,
+#yz + label,
+#zf + label,
+#wx + label{
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid #d3d3d3;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 20px;
+    position: absolute;
+    top: 17px;
+    left: 0;
+}
+#zx:checked + label,
+#yz:checked + label,
+#zf:checked + label,
+#wx:checked + label{
+    background-color: #eee;
+}
+#zx:checked + label:after,
+#yz:checked + label:after,
+#zf:checked + label:after,
+#wx:checked + label:after{
+    content:"\2714";
+}
+input.js-selBank{
+    opacity: 0.2;
+    width: 22px;
+    height: 22px;
+    z-index:  10;
+    position:  relative;
+}
+.add-pay-img>img{
+    width: 120px;
+    height: 55px;
+}
+.add-pay-litbox{
+    padding: 20px;
+    border: 1px solid #cccccc;
+    margin: 20px;
+}
+.add-pay-foot{
+    text-align: center;
+    margin-bottom:  20px;
+}
+.add-pay-foot.re{
+    display: none;
+}
+.add-pay-foot>div{
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 3px;
+    color: white;
+    font-size: 14px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.add-pay-foot>div:first-child+div{
+    background-color: rgb(1, 170, 237);
+}
+.add-pay-foot>div:first-child{
+    background-color: rgb(226, 93, 73);
+}
+.add-pay-foot>div:hover{
+    box-shadow: inset -2px -1px 3px 30px #00000036;
+}
+.add-pay-litbox{
+    display: inline-block;
+    white-space: nowrap;
+}
+.add-pay-til{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.add-pay-table{
+    font-size: 14px;
+    line-height: 45px;
+    text-align: left;
+}
+.add-pay-table td:nth-of-type(2n+1){
+    text-align: right;
+}
+.add-pay-table td{
+    padding: 0 10px;
+}
+.add-pay-table select,
+.add-pay-table input{
+    width: 200px;
+    border: 1px solid rgb(169, 169, 169);
+    padding: 5px 10px;
+    text-align: left;
+}
+.add-pay-table input.rmb{
+    border:none;
+    background-color: white;
+}
+.add-pay-table input.pay-fl{
+    width: 190px;
+}
+.remain-word{
+    margin-left: 120px;
+}
+.remain-word >s{
+    color: #f10215;
+}
+.add-pay-table textarea{
+    padding: 10px;
+    text-indent: 2em;
+    border: 1px solid #b5b5b5;
+}
+.pay-way-k{
+}
+.pay-way-k.on{
+    display: block;
+}
+
+/*--支付方式详细开始--*/
+/*--支付消息--*/
+.payxx{
+    margin-top:  20px;
+}
+.payxx-box{
+    display: inline-block;
+    border: 1px solid #dddddd;
+    position:  relative;
+    font-size: 0;
+}
+.payxx-box:before{
+    height: 40px;
+    display: inline-block;
+    position: absolute;
+    top: -15px;
+    left: 1px;
+    content:'支付消息';
+    color: rgb(241, 127, 43);
+    background-color: white;
+    font-size: 16px;
+    padding: 0 15px;
+    font-weight:  600;
+}
+.payNew{
+    display: inline-block;
+}
+.payNew:nth-of-type(2){
+   vertical-align: top;
+   padding: 0 10px;
+}
+.payNew:nth-of-type(1){
+    border-right: 1px solid #dddddd;
+}
+.cat-img{
+    width: 128px;
+    height: 60px;
+    margin: 10px;
+}
+.cat-img+p{
+    font-size: 14px;
+    color: white;
+    background-color: rgb(241, 127, 43);
+    text-align:  center;
+    padding:  5px 0;
+}
+.payNew-tb{
+    width: 900px;
+    font-size:  14px;
+    line-height: 40px;
+    margin: 20px 10px;
+}
+.payNew-item{
+    width: 80px;
+    text-align: right;
+    padding-right: 10px;
+}
+.item-hight{
+    line-height: 20px;
+}
+.item-top{
+    vertical-align: top;
+}
+
+
+/*--支持银行--*/
+.Support{
+    margin-top: 20px;
+    border: 1px solid #dddddd;
+}
+.Support>p{
+    font-size: 16px;
+    border-bottom: 1px solid #dddddd;
+    padding:  10px;
+}
+.adRe-card{
+    border-bottom: 1px solid #dddddd;
+    padding:  10px;
+}
+.adRe-but{
+    font-size: 14px;
+    color: white;
+    border-radius: 3px;
+    display: inline-block;
+    padding: 10px 15px;
+    cursor:  pointer;
+    margin-right: 10px;
+}
+.adRe-but:hover{
+    box-shadow: inset 0 0 0px 20px #00000026;
+}
+.adRe-but:first-child{
+    background-color: rgb(209, 91, 71);
+}
+.adRe-but:last-child{
+    background-color: rgb(66, 139, 202);
+}
+.adRe-but:before{
+    content: '';
+    display: inline-block;
+    width:16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+}
+.adRe-but:first-child:before{
+   
+    width:12px;
+    height: 12px;
+    background-image: url("../../iframe2/image/ad.png");
+}
+.adRe-but:last-child:before{
+    top: 3px;
+    width:16px;
+    height: 16px;
+    background-image: url("../../iframe2/image/re.png");
+}
+.card-sel>img{
+    width: 160px;
+    height: 64px;
+    margin-right: 40px;
+    margin-top: 10px;
+}
+.card-sel>img:nth-of-type(5n+5){
+    margin-right: 0;
+}
+.card-sel{
+    font-size: 0;
+    padding: 20px 10px ;
+}
+
+
+/*--添加银行弹出框--*/
+.add-blank-form{
+    padding: 10px;
+}
+input.js-selBank+label{
+    background-color: white;
+    border-radius: 5px;
+    border:1px solid #d3d3d3;
+    width:20px;
+    height:20px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 20px;
+    position:  absolute;
+    top: 16px;
+    left: 0;
+}
+input.js-selBank:checked+label{
+    background-color: #eee;
+}
+input.js-selBank:checked +label:after{
+    content:"\2714";
+    color: #333;
+}
+.add-blank-ts{
+    padding: 10px;
+    border-bottom: 1px solid  #d3d3d3;
+}
+.zf-way{
+    opacity: 0;
+    position: relative;
+    width: 22px;
+    height: 22px;
+    z-index: 10;
+}
+.mg10{
+    margin-top: 10px;
+}

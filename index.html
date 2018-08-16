@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>后台管理系统</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="lib/normalize.css">
+    <link rel="stylesheet" href="lib/base.css">
+    <script src="lib/shim/es5-shim.js"></script>
+    <script src="lib/shim/es5-sham.js"></script>
+
+    <script src="lib/jquery-1.11.1.min.js"></script>
+    <script src="lib/template-web.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        $(function(){
+            head.init();
+        });
+    </script>
+    <script id="levelMenu" type="text/html">
+        <ul class="nav-menu-list js-nav-menu-list">
+            {{each $data}}
+            <li dataurl="{{$value.url}}">
+            <p class="js-nav-menu-p">{{$value.name }}</p>
+            <ul class="nav-menu-list-2 js-nav-menu-list">
+                {{if $value.children}}
+                {{include 'level2Menu' $value.children}}
+                {{/if}}
+            </ul>
+            </li>
+            {{/each}}
+        </ul>
+    </script>
+    <script id="level2Menu" type="text/html">
+
+            {{each $data}}
+            <li dataurl="{{$value.url}}">
+                <p class="js-nav-menu-p nav-menu-p">{{$value.name }}</p>
+                {{if $value.children}}
+                {{include 'level2Menu' $value.children}}
+                {{/if}}
+            </li>
+            {{/each}}
+
+    </script>
+
+</head>
+<body>
+    <!--head开始-->
+    <div class="head">
+        <div class="head-l">
+            <img src="image/back.png">
+            <span>后台管理系统</span>
+       </div>
+        <div  class="head-r fr">
+            <ul class="head-r-inlb js-openBox1">
+                <li class="head-r-iteml ">
+                    <img src="image/news.png">
+                    <span>
+                    <s>
+                        8
+                    </s>
+                </span>
+                </li>
+                <li class="head-r-iteml-news js-openBox2">
+                    <p>
+                        <s>8</s>
+                        条新消息
+                    </p>
+                    <div class="head--news-list">
+                        <p>最新消息</p>
+                        <p>+12</p>
+                    </div>
+                    <div class="head--news-list">
+                        <p>切换为编辑登录</p>
+                    </div>
+                    <div class="head--news-list">
+                        <p>新订单</p>
+                        <p>+8</p>
+                    </div>
+                    <div class="head--news-list">
+                        <p>用户消息</p>
+                        <p>+11</p>
+                    </div>
+                    <p>
+                        查看所有通知
+                    </p>
+                </li>
+            </ul>
+            <div class="head-r-itemt">
+                <div class="head-r-itemc">
+               <span class="js-head-time">
+                   <s></s>
+                   年
+                   <s></s>
+                   月
+                   <s></s>
+                   日
+                   <s></s>
+                   时
+                   <s></s>
+                   分
+                   <s></s>
+                   秒
+               </span>
+                </div>
+                <div class="head-r-inlb js-openBox1">
+                    <div class="head-r-itemr ">
+                        <span>欢迎光临，</span>
+                        超级管理员
+                    </div>
+                    <div class="head-r-itemr-up js-openBox2">
+                        <a href="view/iframe7-1/iframe7-1.html" target="main-iframe" class="js-head-set">网站设置</a>
+                        <a  href="view/iframe8-2/iframe8-2.html"  target="main-iframe" class="js-head-pro">个人资料</a>
+                        <a href="javascript:;"  class="js-head-out">退出</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--head结束-->
+    <!--nav开始-->
+    <div class="nav js-nav">
+        <div class="nav-top js-nav-top">
+            <img class='a' src="image/1data.png">
+            <img class='b' src="image/1ad.png">
+            <img class='c' src="image/1reset.png">
+            <img class='d' src="image/1set.png">
+        </div>
+        <div class="nav-menu-list-box js-nav-menu-list-box">
+            <ul class="nav-menu-list js-nav-menu-list">
+                <li class="on">
+                    <p class="js-nav-menu-p nav-menu-p">系统首页</p>
+                </li>
+                <li>
+                    <p>产品管理</p>
+                    <ul class="nav-menu-list-2">
+                        <li>
+                            产品类表
+                        </li>
+                        <li>
+                            品牌管理
+                        </li>
+                        <li>
+                            分类管理
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="nav-foot">
+            <span class="js-shrinkArrow"></span>
+        </div>
+    </div>
+    <!--nav结束-->
+
+    <!--content开始-->
+    <div class="content js-content">
+        <iframe class="content-iframe js-content-iframe" name='main-iframe' src="view/iframe1/iframe1.html" frameborder="0" border="0" scrolling="0">
+        </iframe>
+    </div>
+    <!--content结束-->
+</body>
+
+
+</html>

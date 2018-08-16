@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>产品后台综合管理系统</title>
+    <link rel="stylesheet" href="../../lib/normalize.css">
+    <link rel="stylesheet" href="../../lib/base.css">
+    <script src="../../lib/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/main.js"></script>
+    <script>
+        $(function () {
+            main.init();
+        });
+    </script>
+</head>
+<body>
+<!--content 开始-->
+<div class="content">
+    <!--title 开始-->
+    <div class="title">
+       <div class="title-font">产品后台管理系统</div>
+    </div>
+    <!--logging 开始-->
+    <div class="logging">
+        <p>用户登录</p>
+        <form id="loggingForm" action="../../index.html" method="post">
+            <div class="logging-input js-logging-input">
+                <input type="text" placeholder="请输入用户名" name="userName">
+                <input type="password" placeholder="请输入密码"  name="userPassword">
+                <div class="loggingOn js-loggingOn">登录</div>
+            </div>
+        </form>
+    </div>
+    <!--flex 开始-->
+    <div class="animation">
+        <img src="../login/image/shen3.png" >
+        <img src="../login/image/shen4.png" >
+        <img src="../login/image/shen5.png" >
+        <img src="../login/image/shen6.png"  class="boll">
+    </div>
+</div>
+
+</body>
+
+
+</html>
