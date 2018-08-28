@@ -2,8 +2,8 @@ var head = function () {
     var init = function () {
         // --head开始--
         openbox();
-        closeWindow();
-        nowTime();
+        closeWin();
+        nowTim();
         shrinkMenu();
         loadMenu();
         openMenu();
@@ -14,12 +14,12 @@ var head = function () {
             $(this).children(".js-openBox2").toggleClass('on');
         });
     };
-    var closeWindow =function () {
+    var closeWin=function () {
         $('.js-head-out').click(function (){
             window.location.href="view/login/index.html";
         });
     };
-    var nowTime = function() {
+    var nowTim = function() {
         var timerSckill = null;
         timerSckill = setInterval(function () {
             var myDate = new Date();
